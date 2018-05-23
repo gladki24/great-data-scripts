@@ -20,7 +20,9 @@ export class GR8_Carry extends GR8_Abstract {
       const image_source = $(productsTable[index]).find('a.product_img_link img').first().attr('src');
       const id = 'CY-' + link.slice(link.lastIndexOf('/') + 1, link.lastIndexOf('-'));
 
-      if (!title || !link || !id) { continue; }
+      if (!title || !link || !id) {
+        continue;
+      }
 
       const product: IProduct = {
         id,

@@ -9,7 +9,9 @@ export class GR8_CAndA extends GR8_Abstract {
     // array for products
     const products: IProduct[] = [];
 
-    if (url.indexOf('?') === -1) { url += '?pagesize=&pagenumber=1'; }
+    if (url.indexOf('?') === -1) {
+      url += '?pagesize=&pagenumber=1';
+    }
     // jQuery
     let $ = cheerio.load(await this.getBody(url));
 
@@ -40,7 +42,9 @@ export class GR8_CAndA extends GR8_Abstract {
       const link = $(productsTable[index]).find('a').first().attr('href');
       const id = 'CA-' + imgSrc.slice(imgSrc.lastIndexOf('/') + 1, imgSrc.indexOf('.jpg') - 5);
 
-      if (!title || !link || !id) { continue; }
+      if (!title || !link || !id) {
+        continue;
+      }
 
       const product: IProduct = {
         id,

@@ -4,7 +4,7 @@ import {IProduct} from './Interfaces';
 import {ECategory} from './Enums';
 import * as cheerio from 'cheerio';
 
-export class GR8_Zara extends  GR8_Abstract {
+export class GR8_Zara extends GR8_Abstract {
   public async getImageSource(url: string): Promise<string> {
     const $ = cheerio.load(await this.getBody(url));
     return $('a._seoImg').first().attr('href');
@@ -21,12 +21,16 @@ export class GR8_Zara extends  GR8_Abstract {
     for (let index = 1; index < productsNumber; index++) {
       console.log(index / productsNumber * 100);
       const link = $(productsTable[index]).children('a.item').first().attr('href');
-      if (!link) { continue; }
+      if (!link) {
+        continue;
+      }
       const title = $(productsTable[index]).find('a.name').first().text();
       const id = 'ZA-' + link.slice(link.indexOf('v1=') + 3, link.indexOf('&v2'));
       const price = parseFloat($(productsTable[index]).find('div.price').children('span').data('price'));
 
-      if (!title || !id || !link) { continue; }
+      if (!title || !id || !link) {
+        continue;
+      }
 
       const imgSrc = await this.getImageSource(link);
 

@@ -18,5 +18,6 @@ export abstract class GR8_Abstract implements IProductFactory {
       });
     });
   }
+
   public abstract async getProducts(url: string, category: ECategory): Promise<IProduct[]>;
 }

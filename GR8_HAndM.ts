@@ -4,7 +4,7 @@ import {IProduct} from './Interfaces';
 import {ECategory} from './Enums';
 import * as cheerio from 'cheerio';
 
-export class GR8_HAndM extends  GR8_Abstract {
+export class GR8_HAndM extends GR8_Abstract {
   public async getProducts(url: string, category: ECategory): Promise<IProduct[]> {
     const products: IProduct[] = [];
     const $ = cheerio.load(await this.getBody(url));
@@ -20,10 +20,14 @@ export class GR8_HAndM extends  GR8_Abstract {
       const price = parseFloat(priceString.replace(',', '.'));
       const imgSrc = $(productTable[index]).find('img.product-item-image').first().attr('src');
       const link = $(productTable[index]).find('a.product-item-link').first().attr('href');
-      if (!link) { continue; }
+      if (!link) {
+        continue;
+      }
       const id = 'HM-' + link.slice(link.indexOf('page.') + 5, link.indexOf('.html'));
 
-      if (!title || !link || !id) { continue; }
+      if (!title || !link || !id) {
+        continue;
+      }
 
       const product: IProduct = {
         id,

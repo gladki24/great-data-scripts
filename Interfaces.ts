@@ -1,5 +1,5 @@
-import {EBrand} from "./Enums";
-import {ECategory} from "./Enums";
+import {EBrand} from './Enums';
+import {ECategory} from './Enums';
 
 export interface IProduct {
   id: string;
