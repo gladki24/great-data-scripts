@@ -1,6 +1,6 @@
-<h1><a href="http://80.211.220.192:8080/">Great Data Scripts</a>👕</h1>
-<a href="http://80.211.220.192:8080">
-	<img src="http://80.211.220.192:8080/assets/logo.svg"
+<h1><a href="http://80.211.220.192:80/">Great Data Scripts</a>👕</h1>
+<a href="http://80.211.220.192:80">
+	<img src="http://80.211.220.192:80/assets/logo.svg"
 	alt="Logo" width="350">
 </a>
 <h2>Great Data Scripts are way to get data from most popular cloth brands in Poland</h2>
